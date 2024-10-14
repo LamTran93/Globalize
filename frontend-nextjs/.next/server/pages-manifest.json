@@ -1,0 +1,10 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/owner/app/listings/[id]": "pages/owner/app/listings/[id].js",
+  "/reservation": "pages/reservation.js",
+  "/": "pages/index.js",
+  "/api/auth/verify": "pages/api/auth/verify.js",
+  "/guest/profile": "pages/guest/profile.js"
+}
