@@ -38,7 +38,7 @@ const AddressSelector: React.FC<AddressSelectorProps> = ({ onLocations }) => {
     enabled: !!selectedDistrict
   });
 
-  const handleProvinceChange = (e: React.ChangeEvent<{ value: unknown }>) => {
+  const handleProvinceChange = (e: SelectChangeEvent<string>) => {
     const province = e.target.value as string;
     setSelectedProvince(province);
     setSelectedDistrict("");
@@ -46,14 +46,14 @@ const AddressSelector: React.FC<AddressSelectorProps> = ({ onLocations }) => {
     setProvinceError(!province);
 };
 
-const handleDistrictChange = (e: React.ChangeEvent<{ value: unknown }>) => {
+const handleDistrictChange = (e: SelectChangeEvent<string>) => {
     const district = e.target.value as string;
     setSelectedDistrict(district);
     setSelectedWard("");
     setDistrictError(!district);
 };
 
-const handleWardChange = (e: React.ChangeEvent<{ value: unknown }>) => {
+const handleWardChange = (e: SelectChangeEvent<string>) => {
     const ward = e.target.value as string;
     setSelectedWard(ward);
     setProvinceError(!ward);

@@ -120,7 +120,7 @@ const OwnerLogin = () => {
           </FormProvider>
           <div className="lg:mt-10 xs:mt-5">
             <p className="text-center text-lg text-gray-500 flex flex-col cursor-pointer">
-              <span>Don't have an account yet? </span>
+              <span>Dont have an account yet? </span>
               <span className="text-theme hover:cursor-pointer">
                 Register{" "}
                 <span className="underline" onClick={() => onClickRegister()}>

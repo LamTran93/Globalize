@@ -50,7 +50,7 @@ const ReservationTable = ({rooms} : {rooms: Array<iRoom>}) => {
                 if(value[property] > 0){
                     const name = rooms.find((room) => room.id === property)!.name
                     const price = rooms.find((room) => room.id === property)!.price
-                    const bedroom = rooms.find((room) => room.id === property)!.bedroom
+                    const bedrooms = rooms.find((room) => room.id === property)!.bedrooms
                     const maxGuests = rooms.find((room) => room.id === property)!.maxGuest
                     const image = rooms.find((room) => room.id === property)!.picture
 
@@ -60,7 +60,7 @@ const ReservationTable = ({rooms} : {rooms: Array<iRoom>}) => {
                         roomAmount: value[property],
                         roomFeaturedImage: image,
                         pricePerRoom: price,
-                        bedroom: bedroom,
+                        bedrooms: bedrooms,
                         maxGuests: maxGuests
                     })
 

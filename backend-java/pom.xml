@@ -11,7 +11,7 @@
     <groupId>com.project</groupId>
     <artifactId>booking_platform</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>booking_platform</name>
     <description>booking_platform</description>
     <url/>

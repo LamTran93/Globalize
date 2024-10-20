@@ -1,0 +1,47 @@
+services:
+  backend:
+    build: ./backend-java
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/booking
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 
+      SPRING_MAIL_USERNAME: "***********@************"
+      SPRING_MAIL_PASSWORD: "************************"
+      JWT_SECRET: long_access_secret_203x2313x32142@321334x5662345
+      JWT_REFRESH_SECRET: long_refresh_secret_203x2313x32142@321334x41213123
+    depends_on:
+      - db
+
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE: booking
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  nextjs:
+    build: ./frontend-nextjs
+    ports:
+      - "80:3000"
+    environment:
+      DATABASE_URL: db
+      DATABASE_PORT: 3306
+      DATABASE_NAME: booking
+      DATABASE_USER: root
+      DATABASE_PASSWORD: 
+      DATABAE_DIALECT: mysql
+      JWT_ACCESS_SECRET: long_access_secret_203x2313x32142@321334x5662345
+      JWT_REFRESH_SECRET: long_refresh_secret_203x2313x32142@321334x41213123
+    depends_on:
+      - backend
+      - db
+
+volumes:
+  db_data:
+    driver: local

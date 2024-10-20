@@ -33,7 +33,7 @@ export default function AddImage({ setPicture }: AddImageProps) {
       <ul>
         <li>
           <h5 className="text-lg text-textUnfocus mb-5">
-            You'll need 1 photo to get started
+            You will need 1 photo to get started
           </h5>
           {imageError && (
             <div className="mt-3 text-red-500 font-medium flex items-center border border-red-500 rounded-lg p-3 mb-5 elevation-shadow-2">
